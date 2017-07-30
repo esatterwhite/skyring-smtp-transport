@@ -29,8 +29,10 @@
     "nodemailer": "^4.0.1"
   },
   "devDependencies": {
+    "mailparser": "^2.0.5",
     "skyring": "^4.3.0",
     "smtp-server": "^3.0.1",
+    "supertest": "^3.0.0",
     "tap": "^10.7.0"
   }
 }
