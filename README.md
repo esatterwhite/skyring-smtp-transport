@@ -1,4 +1,4 @@
-# skyring-smtp-transport
+# skyring-smtp-transport [![Build Status](https://travis-ci.org/esatterwhite/skyring-smtp-transport.svg?branch=master)](https://travis-ci.org/esatterwhite/skyring-smtp-transport)
 
 SMTP Transport for node-skyring
 
