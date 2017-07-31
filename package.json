@@ -1,0 +1,38 @@
+{
+  "name": "skyring-smtp-transport",
+  "version": "0.1.0",
+  "description": "SMTP based transport for skyring",
+  "main": "index.js",
+  "scripts": {
+    "test": "tap --cov -j 2 test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/esatterwhite/skyring-smtp-transport"
+  },
+  "keywords": [
+    "skyring",
+    "smtp",
+    "email",
+    "timers",
+    "distributed",
+    "hashring"
+  ],
+  "author": "Eric Satterwhite <esatterwhite@wi.rr.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/esatterwhite/skyring-smtp-transport/issues"
+  },
+  "homepage": "https://github.com/esatterwhite/skyring-smtp-transport#readme",
+  "dependencies": {
+    "debug": "^2.6.8",
+    "nodemailer": "^4.0.1"
+  },
+  "devDependencies": {
+    "mailparser": "^2.0.5",
+    "skyring": "^4.3.0",
+    "smtp-server": "^3.0.1",
+    "supertest": "^3.0.0",
+    "tap": "^10.7.0"
+  }
+}
