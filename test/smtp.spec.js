@@ -16,17 +16,17 @@ function createMailServer(done) {
   , authOptional: true
   , onData:(stream, session, cb) => {
       simpleParser(stream, (err, mail) => {
-        cb()
-        done(err, mail)
-      })
+        cb();
+        done(err, mail);
+      });
     }
   , onAuth:(auth, session, cb) => {
-      setImmediate(cb, null, {user:'abc'})
+      setImmediate(cb, null, {user:'abc'});
     }
-  })
+  });
 }
 
-test('SMTP Transport', (t) => {
+test('SMTP Transport valid', (t) => {
   const state = {
     smtp_server: null
   , skyring: null
@@ -43,22 +43,24 @@ test('SMTP Transport', (t) => {
     , node: {
         port: 3456
       , host: 'localhost'
-      , app: 'smtp' 
+      , app: 'smtp'
       }
-    }).load().listen(3000, null, null, tt.end)
-  })
+    }).load().listen(3000, null, null, tt.end);
+  });
 
   t.test('set smtp timeout', (tt) => {
-    tt.plan(3)
+    tt.plan(5)
     const smtp = createMailServer((err, mail) => {
-      tt.equal(mail.text.trim(), 'hello world')
+      tt.equal(mail.text.trim(), 'hello world', 'text')
+      tt.equal(mail.to.text, 'eric@codedependant.net', 'to')
+      tt.equal(mail.from.text, 'mail@mail.com', 'from')
     });
     tt.on('end', () => {
-      smtp.close()
-    })
+      smtp.close();
+    });
     tt.test('smtp listen', (ttt) => {
-      smtp.listen(2222, ttt.end)
-    })
+      smtp.listen(2222, ttt.end);
+    });
 
 
     tt.test('set timeout', (ttt) => {
@@ -82,19 +84,17 @@ test('SMTP Transport', (t) => {
         })
         .expect(201)
         .end((err, res) => {
-          ttt.error(err)
-          ttt.end()
-        })
-    })
-  })
+          ttt.error(err);
+          ttt.end();
+        });
+    });
+  });
 
   t.test('teardown', (tt) => {
-
     state.skyring.close(() => {
+      tt.comment('skyring shut down')
       tt.end()
-      console.log('skyring server closed')
     })
-
-  })
-  t.end()
-})
+  });
+  t.end();
+});

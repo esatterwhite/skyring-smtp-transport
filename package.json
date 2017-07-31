@@ -4,7 +4,7 @@
   "description": "SMTP based transport for skyring",
   "main": "index.js",
   "scripts": {
-    "test": "tap --cov test"
+    "test": "tap --cov -j 2 test"
   },
   "repository": {
     "type": "git",
