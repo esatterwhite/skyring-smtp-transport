@@ -1,6 +1,6 @@
 {
   "name": "@skyring/smtp-transport",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "SMTP based transport for skyring",
   "main": "index.js",
   "scripts": {
