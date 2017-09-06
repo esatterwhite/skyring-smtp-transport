@@ -28,6 +28,9 @@
     "debug": "^2.6.8",
     "nodemailer": "^4.0.1"
   },
+  "peerDependencies": {
+    "skyring": "<=^5.0.0"
+  },
   "devDependencies": {
     "mailparser": "^2.0.5",
     "skyring": "^4.3.0",
